@@ -21,6 +21,16 @@ export default {
 }
 </script>
 
+<script>
+import Transaction from './components/ApiTransaction'
+export default {
+  name: 'transaction',
+  components: {
+    Transaction
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

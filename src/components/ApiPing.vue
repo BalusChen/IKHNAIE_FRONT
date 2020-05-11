@@ -28,3 +28,17 @@ export default {
   }
 }
 </script>
+
+<style>
+.hello {
+  font-weight: normal;
+  text-align:center;
+  font-size:8pt;
+}
+h3
+{
+  text-align:center;
+  font-size:20pt;
+  color:red;
+}
+</style>
