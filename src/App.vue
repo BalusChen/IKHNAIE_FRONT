@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/ikhnaie.jpeg">
     <router-view/>
   </div>
 </template>
@@ -8,6 +8,16 @@
 <script>
 export default {
   name: 'App'
+}
+</script>
+
+<script>
+import ApiPing from './components/ApiPing'
+export default {
+  name: "ping",
+  components: {
+    ApiPing
+  }
 }
 </script>
 
