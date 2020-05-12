@@ -1,5 +1,24 @@
 <template>
     <div id="transaction">
+      <div id="product_info">
+        <table border="1">
+          <tr>
+            <th>序列号</th>
+            <th>农产品名</th>
+            <th>产地</th>
+            <th>生产日期</th>
+            <th>保质期</th>
+          </tr>
+          <tr>
+            <td>{{ product_info.food_id }}</td>
+            <td>{{ product_info.food_name }}</td>
+            <td>{{ product_info.birth_address }}</td>
+            <td>{{ product_info.birthday }}</td>
+            <td>{{ product_info.shelf_life }}天</td>
+          </tr>
+        </table>
+      </div>
+      <div id="transaction_history">
         <table border="1">
             <tr>
                 <th>交易时间</th>
@@ -19,9 +38,10 @@
                 <td>{{ record.buyer_name }}</td>
                 <td>{{ record.buyer_id }}</td>
                 <td>{{ record.number }}</td>
-                <td>{{ record.price }}</td>
+                <td>￥{{ record.price }}</td>
             </tr>
         </table>
+      </div>
     </div>
 </template>
 

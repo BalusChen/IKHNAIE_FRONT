@@ -1,8 +1,8 @@
 {
-  "name": "ikhnaie_front",
+  "name": "ikhnaie_frontend",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "balus@foxmail.com",
+  "author": "balus <balus@foxmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -14,12 +14,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "axios": "^0.19.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -38,6 +38,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
+    "element-ui": "^2.13.1",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -72,8 +73,8 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
-    "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-dev-server": "^3.1.11",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
