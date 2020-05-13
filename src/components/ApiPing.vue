@@ -9,22 +9,23 @@
 import axios from 'axios'
 export default {
   name: 'apiping',
-  data () {
+  data() {
     return {
       cartoon: null,
       names: null
     }
   },
 
-  mounted () {
-    axios
-      .get('http://localhost:9877/ikhnaie/v1/ping')
-      .then(response => {
+  mounted() {
+    axios.get('http://localhost:9877/ikhnaie/v1/ping').then(
+      response => {
         this.cartoon = response.data.cartoon
         this.names = response.data.names
-      }, error => {
+      },
+      error => {
         console.log('ping failed: ', error)
-      })
+      }
+    )
   }
 }
 </script>
@@ -32,13 +33,12 @@ export default {
 <style>
 .hello {
   font-weight: normal;
-  text-align:center;
-  font-size:8pt;
+  text-align: center;
+  font-size: 8pt;
 }
-h3
-{
-  text-align:center;
-  font-size:20pt;
-  color:red;
+h3 {
+  text-align: center;
+  font-size: 20pt;
+  color: red;
 }
 </style>
