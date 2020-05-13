@@ -1,33 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/ikhnaie.jpeg">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
   name: 'App'
-}
-</script>
-
-<script>
-import ApiPing from './components/ApiPing'
-export default {
-  name: "ping",
-  components: {
-    ApiPing
-  }
-}
-</script>
-
-<script>
-import Transaction from './components/ApiTransaction'
-export default {
-  name: 'transaction',
-  components: {
-    Transaction
-  }
 }
 </script>
 
