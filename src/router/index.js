@@ -23,6 +23,24 @@ export default new Router({
       path: '/transaction/history',
       name: 'TransactionHistory',
       component: Transaction
+    },
+    // 用户界面
+    {
+      path: '/user',
+      name: 'UserIndex',
+      component: () => import('../components/user/UserIndex.vue'),
+      children: [
+        {
+          path: '/productlist',
+          name: 'ProductList',
+          component: () => import('../components/user/UserProductList.vue')
+        },
+        {
+          path: '/productadd',
+          name: 'ProductAdd',
+          component: () => import('../components/product/AddProduct.vue')
+        }
+      ]
     }
   ]
 })
