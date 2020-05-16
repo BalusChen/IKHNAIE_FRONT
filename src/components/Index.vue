@@ -26,12 +26,16 @@
             <el-input v-model="user.username" placeholder="请输入用户名" prefix-icon></el-input>
           </el-form-item>
 
-          <el-form-item prop="username" label="身份证号">
+          <el-form-item prop="user_id" label="身份证号">
             <el-input v-model="user.userID" placeholder="请输入身份证号" prefix-icon></el-input>
           </el-form-item>
 
-          <el-form-item prop="username" label="密码">
+          <el-form-item prop="password" label="密码">
             <el-input v-model="user.password" placeholder="请输入密码" prefix-icon></el-input>
+          </el-form-item>
+
+          <el-form-item prop="organization" label="组织">
+            <el-input v-model="user.organization" placeholder="请输入组织" prefix-icon></el-input>
           </el-form-item>
         </el-form>
 
@@ -112,7 +116,8 @@ export default {
             qs.stringify({
               username: this.user.username,
               user_id: this.user.userID,
-              password: this.user.password
+              password: this.user.password,
+              organization: this.user.organization
             })
           )
           .then(response => {
