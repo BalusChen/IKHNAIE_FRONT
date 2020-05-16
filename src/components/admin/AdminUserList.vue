@@ -15,7 +15,7 @@ export default {
   name: 'allUser',
   data() {
     return {
-      users: ''
+      users: []
     }
   },
 
