@@ -17,11 +17,13 @@
         <el-button
           @click="grantAccessRight(users[scope.$index].user_id)"
           v-if="users[scope.$index].status === 1"
+          type="primary"
         >准入</el-button>
         <el-button
           @click="revokeAccessRight(users[scope.$index].user_id)"
           v-if="users[scope.$index].status === 2"
-        >收回</el-button>
+          type="warning"
+        >吊销</el-button>
       </template>
     </el-table-column>
   </el-table>

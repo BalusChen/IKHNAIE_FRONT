@@ -45,7 +45,7 @@
             <el-dropdown-item>删除</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <span>王小虎</span>
+        <span>管理员</span>
       </el-header>
 
       <el-main>
