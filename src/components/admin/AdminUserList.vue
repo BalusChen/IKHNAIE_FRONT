@@ -39,27 +39,68 @@ export default {
 
   methods: {
     grantAccessRight: function(userID) {
-      console.log(userID)
-      axios
-        .get(
-          'http://localhost:9877/ikhnaie/v1/user/access/grant?user_id=' + userID
-        )
-        .then(response => {})
+      this.$confirm('此操作将赋予用户准入权限，是否继续？', '温馨提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+        // 点击【确定】按钮之后的操作
+        .then(() => {
+          axios
+            .get(
+              'http://localhost:9877/ikhnaie/v1/user/access/grant?user_id=' +
+                userID
+            )
+            .then(response => {
+              if (response.data.status_code === 200) {
+                this.$message.success('授权成功')
+              } else {
+                this.$message.error('服务器异常，授权失败')
+              }
+            })
+            .catch(response => {
+              this.$message.error('请求失败，无法授权')
+            })
+        })
+        // 点击【取消】按钮之后的操作
+        .catch(() => {
+          this.$message.info('授权操作已取消')
+        })
     },
 
     revokeAccessRight: function(userID) {
-      console.log(userID)
-      axios
-        .get('http://localhost:9877/ikhnaie/v1/user/access/revoke', {
-          user_id: userID
+      this.$confirm('此操作将吊销用户准入权限，是否继续？', '温馨提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+        // 点击【确定】按钮之后的操作
+        .then(() => {
+          axios
+            .get(
+              'http://localhost:9877/ikhnaie/v1/user/access/revoke?user_id=' +
+                userID
+            )
+            .then(response => {
+              if (response.data.status_code === 200) {
+                this.$message.success('吊销成功')
+              } else {
+                this.$message.error('服务器异常，吊销失败')
+              }
+            })
+            .catch(response => {
+              this.$message.error('请求失败，无法吊销准入权限')
+            })
         })
-        .then(response => {})
+        // 点击【取消】按钮之后的操作
+        .catch(() => {
+          this.$message.info('吊销操作已取消')
+        })
     }
   },
 
   mounted() {
     axios.get('http://localhost:9877/ikhnaie/v1/user/list').then(response => {
-      console.log(response.data)
       if (response.data.status_code === 200) {
         this.users = response.data.users
       } else {
