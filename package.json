@@ -14,8 +14,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "moment": "^2.25.3",
     "qs": "^6.9.4",
     "vue": "^2.5.2",
+    "vue-cookies": "^1.7.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

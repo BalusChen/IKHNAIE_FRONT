@@ -30,7 +30,7 @@
           <th>数目</th>
           <th>单价</th>
         </tr>
-        <tr v-for="record in transaction_history" :key="record.trade_time">
+        <tr v-for="(record, idx) in transaction_history" :key="idx">
           <td>{{ record.trade_time }}</td>
           <td>{{ record.trade_place }}</td>
           <td>{{ record.seller_name }}</td>
