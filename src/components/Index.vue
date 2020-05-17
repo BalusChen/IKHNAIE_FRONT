@@ -90,14 +90,15 @@ export default {
           )
           .then(response => {
             if (response.data.status_code === 200) {
-              alert('登陆成功')
-              console.log('登陆成功', response.data)
+              this.$message.success('登录成功')
               this.$cookies.set('user', response.data.user)
               this.$router.push('user')
             } else {
-              console.log('用户名或者密码有误', response.data)
-              alert('您输入的用户名或密码有误！')
+              this.$message.error('用户名或密码不准确')
             }
+          })
+          .catch(() => {
+            this.$message.error('请求失败')
           })
       }
     },
