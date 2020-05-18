@@ -18,7 +18,7 @@
             <i class="el-icon-menu"></i>区块链管理
           </template>
           <el-menu-item-group>
-            <el-menu-item index="2-1">链码状况</el-menu-item>
+            <el-menu-item index="2-1" :route="{name: 'ChainCodeList'}">链码状况</el-menu-item>
             <el-menu-item index="2-2">链上组织</el-menu-item>
           </el-menu-item-group>
         </el-submenu>

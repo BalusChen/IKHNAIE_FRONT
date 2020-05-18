@@ -52,6 +52,11 @@ const routes = [
         path: '/userlist',
         name: 'UserList',
         component: () => import('../components/admin/AdminUserList.vue')
+      },
+      {
+        path: '/chaincodelist',
+        name: 'ChainCodeList',
+        component: () => import('../components/blockchain/ChainCode.vue')
       }
     ]
   }
