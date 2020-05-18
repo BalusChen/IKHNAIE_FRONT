@@ -71,7 +71,7 @@
     </div>
 
     <div>
-      <el-dialog title="二维码" :visible.sync="dialogVisibleQrcode" width="30%">
+      <el-dialog title="二维码" :visible.sync="dialogVisibleQrcode" width="20%">
         <img :src="this.qrCodeUrl" />
 
         <span slot="footer" class="dialog-footer">
