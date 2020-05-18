@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '@/components/Index'
 import ApiPing from '@/components/ApiPing'
-import Transaction from '@/components/ApiTransaction'
+import TransactionHistorry from '@/components/transaction/History'
 
 Vue.use(VueRouter)
 
@@ -18,9 +18,9 @@ const routes = [
     component: ApiPing
   },
   {
-    path: '/transaction/history',
+    path: '/transaction/history/:food_id',
     name: 'TransactionHistory',
-    component: Transaction
+    component: TransactionHistorry
   },
 
   // 用户界面
