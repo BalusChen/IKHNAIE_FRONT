@@ -83,7 +83,6 @@
 
 <script>
 import axios from 'axios'
-import qs from 'qs'
 export default {
   data() {
     return {
@@ -127,20 +126,6 @@ export default {
       fd.append('lot', this.product.lot)
       fd.append('description', this.product.desc)
       fd.append('image', this.product.image)
-
-      let str = qs.stringify({
-        name: this.product.name,
-        owner_id: this.$cookies.get('user').user_id,
-        specification: this.product.spec,
-        region: this.product.region,
-        mfrs_name: this.product.mfrs_name,
-        mfg_date: this.product.mfg_date,
-        exp_date: this.product.exp_date,
-        qsid: this.product.qsid,
-        lot: this.product.lot,
-        description: this.product.desc
-      })
-      console.log(str)
 
       axios
         .post('http://localhost:9877/ikhnaie/v1/product/add', fd, {

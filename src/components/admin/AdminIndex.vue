@@ -1,25 +1,35 @@
 <template>
-  <el-container style="border: 1px solid #eee">
+  <el-container style="height: 500px; border: 1px solid #eee">
     <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
       <el-menu default-active="0" :router="true">
         <el-submenu index="1">
           <template slot="title">
-            <i class="el-icon-s-custom"></i>个人信息
+            <i class="el-icon-s-custom"></i>用户管理
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-1">TODO-1</el-menu-item>
-            <el-menu-item index="1-2">TODO-2</el-menu-item>
+            <el-menu-item index="1-1" :route="{name: 'UserList'}">所有用户</el-menu-item>
+            <el-menu-item index="1-2">已准入用户</el-menu-item>
             <el-menu-item index="1-3">未准入用户</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
         <el-submenu index="2">
           <template slot="title">
-            <i class="el-icon-menu"></i>农产品管理
+            <i class="el-icon-menu"></i>区块链管理
           </template>
           <el-menu-item-group>
-            <el-menu-item index="2-1" :route="{name: 'ProductList'}">所有农产品</el-menu-item>
-            <el-menu-item index="2-2" :route="{name: 'ProductAdd'}">添加农产品</el-menu-item>
+            <el-menu-item index="2-1" :route="{name: 'ChainCodeList'}">链码状况</el-menu-item>
+            <el-menu-item index="2-2">链上组织</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+
+        <el-submenu index="3">
+          <template slot="title">
+            <i class="el-icon-setting"></i>个人信息
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="3-1">TODO1</el-menu-item>
+            <el-menu-item index="3-2">TODO2</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
@@ -35,7 +45,7 @@
             <el-dropdown-item>删除</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <span>用户</span>
+        <span>管理员</span>
       </el-header>
 
       <el-main>
@@ -47,7 +57,7 @@
 
 <style>
 .el-header {
-  background-color: #b3d1bd;
+  background-color: #b3c0d1;
   color: #333;
   line-height: 60px;
 }
@@ -58,14 +68,5 @@
 </style>
 
 <script>
-import moment from 'moment'
-export default {
-  methods: {},
-
-  mounted() {
-    console.log('user cookies:', this.$cookies.get('user'))
-    console.log(new Date())
-    console.log(moment(new Date()).format('YYYY-MM-DD'))
-  }
-}
+export default {}
 </script>
