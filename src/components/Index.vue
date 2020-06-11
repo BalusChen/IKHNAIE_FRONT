@@ -92,7 +92,11 @@ export default {
             if (response.data.status_code === 200) {
               this.$message.success('登录成功')
               this.$cookies.set('user', response.data.user)
-              this.$router.push('user')
+              if (response.data.user.type === 1) {
+                this.$router.push('admin')
+              } else {
+                this.$router.push('user')
+              }
             } else {
               this.$message.error('用户名或密码不准确')
             }
