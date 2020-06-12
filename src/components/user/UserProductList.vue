@@ -15,17 +15,17 @@
             <div style="position: relative; top: 45px;">
               <span>{{product.name}}</span>
               <div class="bottom clearfix">
-                <el-button type="text" class="button" @click="showProductInfo(product)">详情</el-button>
+                <el-button type="primary" class="button" @click="showProductInfo(product)">详情</el-button>
 
-                <el-button type="text" class="button" @click="beforeTransaction(product.id)">交易</el-button>
+                <el-button type="primary" class="button" @click="beforeTransaction(product.id)">交易</el-button>
 
                 <el-button
-                  type="text"
+                  type="primary"
                   class="button"
                   @click="showTransactionHistory(product.id)"
                 >查看交易历史</el-button>
 
-                <el-button type="text" @click="generateQRCode(product.id)" class="button">生成二维码</el-button>
+                <el-button type="primary" @click="generateQRCode(product.id)" class="button">生成二维码</el-button>
               </div>
             </div>
           </div>
