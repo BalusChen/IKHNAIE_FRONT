@@ -15,14 +15,17 @@
             <div style="position: relative; top: 45px;">
               <span>{{product.name}}</span>
               <div class="bottom clearfix">
-                <el-button type="text" class="button" @click="dialogVisibleDetail = true">详情</el-button>
-                <el-button type="text" class="button" @click="beforeTransaction(product.id)">交易</el-button>
+                <el-button type="primary" class="button" @click="showProductInfo(product)">详情</el-button>
+
+                <el-button type="primary" class="button" @click="beforeTransaction(product.id)">交易</el-button>
+
                 <el-button
-                  type="text"
+                  type="primary"
                   class="button"
                   @click="showTransactionHistory(product.id)"
                 >查看交易历史</el-button>
-                <el-button type="text" @click="generateQRCode(product.id)" class="button">生成二维码</el-button>
+
+                <el-button type="primary" @click="generateQRCode(product.id)" class="button">生成二维码</el-button>
               </div>
             </div>
           </div>
@@ -32,9 +35,32 @@
 
     <div>
       <el-dialog title="详情" :visible.sync="dialogVisibleDetail" width="50%">
-        <el-table :data="history" stripe style="width: 100%">
-          <!-- TODO: which data to bind? -->
-        </el-table>
+        <table border="1">
+          <tr>
+            <td>产品名</td>
+            <td>所属人ID</td>
+            <td>规格</td>
+            <td>产地</td>
+            <td>生产商</td>
+            <td>生产日期</td>
+            <td>保质期</td>
+            <td>生产许可证编号</td>
+            <td>生产批次号</td>
+            <td>详情</td>
+          </tr>
+          <tr>
+            <td>{{ chosenProduct.name }}</td>
+            <td>{{ chosenProduct.owner_id }}</td>
+            <td>{{ chosenProduct.specification }}</td>
+            <td>{{ chosenProduct.region }}</td>
+            <td>{{ chosenProduct.mfrs_name }}</td>
+            <td>{{ chosenProduct.mfg_date }}</td>
+            <td>{{ chosenProduct.exp_date }}</td>
+            <td>{{ chosenProduct.qsid }}</td>
+            <td>{{ chosenProduct.lot }}</td>
+            <td>{{ chosenProduct.description }}</td>
+          </tr>
+        </table>
 
         <span slot="footer" class="dialog-footer">
           <el-button @click="dialogVisibleDetail= false">取 消</el-button>
@@ -45,7 +71,7 @@
 
     <div>
       <el-dialog title="交易" :visible.sync="dialogVisibleTransaction" width="30%">
-        <el-form ref="form" :model="product" label-width="120px" align="left">
+        <el-form ref="form" label-width="120px" align="left">
           <el-form-item label="买家名">
             <el-input v-model="transaction.buyer_name" placeholder="请输入买家名"></el-input>
           </el-form-item>
@@ -114,6 +140,7 @@ export default {
       dialogVisibleQrcode: false,
       qrCodeUrl: '',
       products: [],
+      chosenProduct: '',
       history: [],
       transaction: {
         food_id: '',
@@ -127,6 +154,12 @@ export default {
   },
 
   methods: {
+    showProductInfo(product) {
+      console.log('showProductInfo:', product)
+      this.dialogVisibleDetail = true
+      this.chosenProduct = product
+    },
+
     showTransactionHistory(foodID) {
       this.dialogVisibleHistory = true
       console.log('foodID: ', foodID)
